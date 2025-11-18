@@ -1,3 +1,4 @@
+import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
@@ -51,7 +52,13 @@ def process_data(
         y = np.array([])
 
     X_categorical = X[categorical_features].values
-    X_continuous = X.drop(*[categorical_features], axis=1)
+    
+    # 🐞 FIX 1: Change X.drop to X.drop(columns=...) to ensure correct column selection
+    # The original line X.drop(categorical_features, axis=1) is technically fine, 
+    # but using 'columns=' is safer and more explicit when dropping by column names.
+    # The udacity starter code intended to use the 'columns' argument here, 
+    # as the continuous features are those *not* in the categorical list.
+    X_continuous = X.drop(columns=categorical_features, axis=1)
 
     if training is True:
         encoder = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
@@ -66,7 +73,9 @@ def process_data(
         except AttributeError:
             pass
 
-    X = np.concatenate([X_continuous, X_categorical], axis=1)
+    # 🐞 FIX 2: Add .values to X_continuous. This converts the pandas DataFrame 
+    # of continuous features into a numpy array, which is required for np.concatenate.
+    X = np.concatenate([X_continuous.values, X_categorical], axis=1)
     return X, y, encoder, lb
 
 def apply_label(inference):
