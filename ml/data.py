@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
@@ -18,7 +17,8 @@ def process_data(
     Inputs
     ------
     X : pd.DataFrame
-        Dataframe containing the features and label. Columns in `categorical_features`
+        Dataframe containing the features and label. Columns in
+        `categorical_features`
     categorical_features: list[str]
         List containing the names of the categorical features (default=[])
     label : str
@@ -53,7 +53,7 @@ def process_data(
 
     X_categorical = X[categorical_features].values
 
-    # FIX: Cleaned up long line and comments
+    # FIX: Removed unnecessary comments
     X_continuous = X.drop(columns=categorical_features, axis=1)
 
     if training is True:
@@ -69,7 +69,7 @@ def process_data(
         except AttributeError:
             pass
 
-    # FIX: Cleaned up long line and comments
+    # FIX: Removed unnecessary comments
     X = np.concatenate([X_continuous.values, X_categorical], axis=1)
     return X, y, encoder, lb
 

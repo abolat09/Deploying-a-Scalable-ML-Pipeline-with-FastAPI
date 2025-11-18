@@ -1,9 +1,10 @@
-import joblib 
+import joblib
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
-from sklearn.ensemble import RandomForestClassifier 
+from sklearn.ensemble import RandomForestClassifier
 
 
+# Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -64,6 +65,7 @@ def inference(model, X):
     # TODO: implement the function
     return model.predict(X)
 
+
 def save_model(model, path):
     """ Serializes model to a file.
 
@@ -77,6 +79,7 @@ def save_model(model, path):
     # TODO: implement the function
     joblib.dump(model, path)
 
+
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
     # TODO: implement the function
@@ -86,7 +89,7 @@ def load_model(path):
 def performance_on_categorical_slice(
     data, column_name, slice_value, categorical_features, label, encoder, lb, model
 ):
-    """ Computes the model metrics on a slice of the data specified by a 
+    """ Computes the model metrics on a slice of the data specified by a
     column name and value.
 
     Processes the data using one hot encoding for the categorical features and a
@@ -96,7 +99,7 @@ def performance_on_categorical_slice(
     Inputs
     ------
     data : pd.DataFrame
-        Dataframe containing the features and label. Columns in 
+        Dataframe containing the features and label. Columns in
         `categorical_features`
     column_name : str
         Column containing the sliced feature.
@@ -105,7 +108,7 @@ def performance_on_categorical_slice(
     categorical_features: list
         List containing the names of the categorical features (default=[])
     label : str
-        Name of the label column in `X`. If None, then an empty array will be 
+        Name of the label column in `X`. If None, then an empty array will be
         returned for y (default=None)
     encoder : sklearn.preprocessing._encoders.OneHotEncoder
         Trained sklearn OneHotEncoder, only used if training=False.

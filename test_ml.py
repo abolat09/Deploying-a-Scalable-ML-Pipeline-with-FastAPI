@@ -13,9 +13,9 @@ def sample_data():
         'age': [30, 40, 50, 60],
         'workclass': ['Private', 'Self-emp-not-inc', 'Private', 'Federal-gov'],
         'education': ['Bachelors', 'HS-grad', 'Masters', 'Doctorate'],
-        'marital-status': ['Married-civ-spouse', 'Divorced', 'Never-married', 
+        'marital-status': ['Married-civ-spouse', 'Divorced', 'Never-married',
                            'Married-civ-spouse'],
-        'occupation': ['Exec-managerial', 'Craft-repair', 'Prof-specialty', 
+        'occupation': ['Exec-managerial', 'Craft-repair', 'Prof-specialty',
                        'Prof-specialty'],
         'relationship': ['Husband', 'Not-in-family', 'Not-in-family', 'Wife'],
         'race': ['White', 'Black', 'Asian-Pac-Islander', 'White'],
@@ -55,7 +55,8 @@ def test_data_integrity(sample_data):
 # TODO: implement the second test. Change the function name and input as needed
 def test_label_binarization(sample_data):
     """
-    Test 2: Ensures process_data correctly binarizes the 'salary' label (contains only 0s and 1s).
+    Test 2: Ensures process_data correctly binarizes the 'salary' label (contains
+    only 0s and 1s).
     """
     categorical_features = [
         "workclass", "education", "marital-status", "occupation", "relationship",
@@ -77,7 +78,8 @@ def test_label_binarization(sample_data):
 # TODO: implement the third test. Change the function name and input as needed
 def test_model_inference_output(sample_data):
     """
-    Test 3: Ensures model inference runs without errors and returns binary predictions.
+    Test 3: Ensures model inference runs without errors and returns binary
+    predictions.
     """
     categorical_features = [
         "workclass", "education", "marital-status", "occupation", "relationship",

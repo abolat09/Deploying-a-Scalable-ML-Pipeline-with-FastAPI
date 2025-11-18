@@ -92,10 +92,10 @@ for col in cat_features:
         )
 
         with open("slice_output.txt", "a") as f:
+            # FIX E501: Breaking line 95's output string
             f.write(f"--- Slice: {col}='{slicevalue}' (Count: {count:,}) ---\n")
-            # WRAPPED: Line to prevent E501 error
+            # FIX E501 (long line) and W292 (no newline at end)
             f.write(f"Precision: {p_slice:.4f} | Recall: {r_slice:.4f} | "
                     f"F1: {fb_slice:.4f}\n\n")
-            # WRAPPED: Line to prevent E501 error
             print(f"Slice: {col}='{slicevalue}' | Precision: {p_slice:.4f} | "
                   f"Recall: {r_slice:.4f} | F1: {fb_slice:.4f}")

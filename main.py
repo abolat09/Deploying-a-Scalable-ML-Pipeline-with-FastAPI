@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from ml.data import apply_label, process_data
 from ml.model import inference, load_model
 
+
 # --- Model Artifact Loading and Setup ---
 
 MODEL_DIR = "model"
@@ -13,12 +14,14 @@ MODEL_PATH = os.path.join(MODEL_DIR, "model.pkl")
 ENCODER_PATH = os.path.join(MODEL_DIR, "encoder.pkl")
 LB_PATH = os.path.join(MODEL_DIR, "lb.pkl")
 
+
 # Load artifacts immediately when the script starts
 try:
     model = load_model(MODEL_PATH)
     encoder = load_model(ENCODER_PATH)
     lb = load_model(LB_PATH)
 except FileNotFoundError as e:
+    # E501 FIX: Split print statement across two lines
     print(f"ERROR: Model artifact not found at {e.filename}. "
           "Run train_model.py first.")
     # Exit or handle gracefully if artifacts are missing
@@ -34,6 +37,8 @@ cat_features = [
     "sex",
     "native-country",
 ]
+
+
 # DO NOT MODIFY (This class is used for FastAPI request body validation)
 class Data(BaseModel):
     age: int = Field(..., example=37)
@@ -56,7 +61,9 @@ class Data(BaseModel):
         ..., example="United-States", alias="native-country"
     )
 
+
 app = FastAPI(title="Census Income Classifier API")
+
 
 @app.get("/")
 async def get_root():
@@ -91,6 +98,8 @@ async def post_inference(data: Data):
 
     # Predict the result
     prediction = inference(model, data_processed)
-    
+
     # Return the decoded label
     return {"prediction": apply_label(prediction)}
+
+# W292 FIX: Ensure final blank line is present
