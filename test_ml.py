@@ -32,8 +32,8 @@ def sample_data():
 # TODO: implement the first test. Change the function name and input as needed
 def test_data_integrity(sample_data):
     """
-    Test 1: Ensures process_data returns correct object types and
-    preserves row count.
+    Test 1: Ensures process_data returns correct object types and preserves
+    row count.
     """
     categorical_features = [
         "workclass", "education", "marital-status", "occupation", "relationship",
