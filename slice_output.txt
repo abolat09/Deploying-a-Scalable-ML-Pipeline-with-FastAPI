@@ -1,0 +1,297 @@
+--- Slice: workclass='?' (Count: 389) ---
+Precision: 0.6800 | Recall: 0.4048 | F1: 0.5075
+
+--- Slice: workclass='Federal-gov' (Count: 191) ---
+Precision: 0.7971 | Recall: 0.7857 | F1: 0.7914
+
+--- Slice: workclass='Local-gov' (Count: 387) ---
+Precision: 0.7500 | Recall: 0.6818 | F1: 0.7143
+
+--- Slice: workclass='Private' (Count: 4,578) ---
+Precision: 0.7362 | Recall: 0.6384 | F1: 0.6838
+
+--- Slice: workclass='Self-emp-inc' (Count: 212) ---
+Precision: 0.7586 | Recall: 0.7458 | F1: 0.7521
+
+--- Slice: workclass='Self-emp-not-inc' (Count: 498) ---
+Precision: 0.7027 | Recall: 0.4968 | F1: 0.5821
+
+--- Slice: workclass='State-gov' (Count: 254) ---
+Precision: 0.7500 | Recall: 0.6986 | F1: 0.7234
+
+--- Slice: workclass='Without-pay' (Count: 4) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: education='10th' (Count: 183) ---
+Precision: 0.5000 | Recall: 0.2500 | F1: 0.3333
+
+--- Slice: education='11th' (Count: 225) ---
+Precision: 1.0000 | Recall: 0.2727 | F1: 0.4286
+
+--- Slice: education='12th' (Count: 98) ---
+Precision: 1.0000 | Recall: 0.4000 | F1: 0.5714
+
+--- Slice: education='1st-4th' (Count: 23) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: education='5th-6th' (Count: 62) ---
+Precision: 1.0000 | Recall: 0.5000 | F1: 0.6667
+
+--- Slice: education='7th-8th' (Count: 141) ---
+Precision: 1.0000 | Recall: 0.0000 | F1: 0.0000
+
+--- Slice: education='9th' (Count: 115) ---
+Precision: 1.0000 | Recall: 0.3333 | F1: 0.5000
+
+--- Slice: education='Assoc-acdm' (Count: 198) ---
+Precision: 0.7105 | Recall: 0.5745 | F1: 0.6353
+
+--- Slice: education='Assoc-voc' (Count: 273) ---
+Precision: 0.6538 | Recall: 0.5397 | F1: 0.5913
+
+--- Slice: education='Bachelors' (Count: 1,053) ---
+Precision: 0.7569 | Recall: 0.7333 | F1: 0.7449
+
+--- Slice: education='Doctorate' (Count: 77) ---
+Precision: 0.8500 | Recall: 0.8947 | F1: 0.8718
+
+--- Slice: education='HS-grad' (Count: 2,085) ---
+Precision: 0.6460 | Recall: 0.4232 | F1: 0.5114
+
+--- Slice: education='Masters' (Count: 369) ---
+Precision: 0.8263 | Recall: 0.8502 | F1: 0.8381
+
+--- Slice: education='Preschool' (Count: 10) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: education='Prof-school' (Count: 116) ---
+Precision: 0.8163 | Recall: 0.9524 | F1: 0.8791
+
+--- Slice: education='Some-college' (Count: 1,485) ---
+Precision: 0.6727 | Recall: 0.5343 | F1: 0.5956
+
+--- Slice: marital-status='Divorced' (Count: 920) ---
+Precision: 0.7778 | Recall: 0.3398 | F1: 0.4730
+
+--- Slice: marital-status='Married-AF-spouse' (Count: 4) ---
+Precision: 1.0000 | Recall: 0.0000 | F1: 0.0000
+
+--- Slice: marital-status='Married-civ-spouse' (Count: 2,950) ---
+Precision: 0.7317 | Recall: 0.6922 | F1: 0.7114
+
+--- Slice: marital-status='Married-spouse-absent' (Count: 96) ---
+Precision: 1.0000 | Recall: 0.2500 | F1: 0.4000
+
+--- Slice: marital-status='Never-married' (Count: 2,126) ---
+Precision: 0.8148 | Recall: 0.4272 | F1: 0.5605
+
+--- Slice: marital-status='Separated' (Count: 209) ---
+Precision: 1.0000 | Recall: 0.4211 | F1: 0.5926
+
+--- Slice: marital-status='Widowed' (Count: 208) ---
+Precision: 1.0000 | Recall: 0.1579 | F1: 0.2727
+
+--- Slice: occupation='?' (Count: 389) ---
+Precision: 0.6800 | Recall: 0.4048 | F1: 0.5075
+
+--- Slice: occupation='Adm-clerical' (Count: 726) ---
+Precision: 0.6389 | Recall: 0.4792 | F1: 0.5476
+
+--- Slice: occupation='Armed-Forces' (Count: 3) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: occupation='Craft-repair' (Count: 821) ---
+Precision: 0.6642 | Recall: 0.4917 | F1: 0.5651
+
+--- Slice: occupation='Exec-managerial' (Count: 838) ---
+Precision: 0.7978 | Recall: 0.7456 | F1: 0.7708
+
+--- Slice: occupation='Farming-fishing' (Count: 193) ---
+Precision: 0.5455 | Recall: 0.2143 | F1: 0.3077
+
+--- Slice: occupation='Handlers-cleaners' (Count: 273) ---
+Precision: 0.6667 | Recall: 0.3333 | F1: 0.4444
+
+--- Slice: occupation='Machine-op-inspct' (Count: 378) ---
+Precision: 0.5714 | Recall: 0.4255 | F1: 0.4878
+
+--- Slice: occupation='Other-service' (Count: 667) ---
+Precision: 0.7143 | Recall: 0.1923 | F1: 0.3030
+
+--- Slice: occupation='Priv-house-serv' (Count: 26) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: occupation='Prof-specialty' (Count: 828) ---
+Precision: 0.7798 | Recall: 0.7679 | F1: 0.7738
+
+--- Slice: occupation='Protective-serv' (Count: 136) ---
+Precision: 0.7059 | Recall: 0.5714 | F1: 0.6316
+
+--- Slice: occupation='Sales' (Count: 729) ---
+Precision: 0.7263 | Recall: 0.6771 | F1: 0.7008
+
+--- Slice: occupation='Tech-support' (Count: 189) ---
+Precision: 0.7200 | Recall: 0.7059 | F1: 0.7129
+
+--- Slice: occupation='Transport-moving' (Count: 317) ---
+Precision: 0.6087 | Recall: 0.4375 | F1: 0.5091
+
+--- Slice: relationship='Husband' (Count: 2,590) ---
+Precision: 0.7331 | Recall: 0.6949 | F1: 0.7135
+
+--- Slice: relationship='Not-in-family' (Count: 1,702) ---
+Precision: 0.8000 | Recall: 0.4043 | F1: 0.5371
+
+--- Slice: relationship='Other-relative' (Count: 178) ---
+Precision: 1.0000 | Recall: 0.3750 | F1: 0.5455
+
+--- Slice: relationship='Own-child' (Count: 1,019) ---
+Precision: 1.0000 | Recall: 0.1765 | F1: 0.3000
+
+--- Slice: relationship='Unmarried' (Count: 702) ---
+Precision: 0.9167 | Recall: 0.2444 | F1: 0.3860
+
+--- Slice: relationship='Wife' (Count: 322) ---
+Precision: 0.7185 | Recall: 0.6783 | F1: 0.6978
+
+--- Slice: race='Amer-Indian-Eskimo' (Count: 71) ---
+Precision: 0.6000 | Recall: 0.6000 | F1: 0.6000
+
+--- Slice: race='Asian-Pac-Islander' (Count: 193) ---
+Precision: 0.7857 | Recall: 0.7097 | F1: 0.7458
+
+--- Slice: race='Black' (Count: 599) ---
+Precision: 0.7407 | Recall: 0.6154 | F1: 0.6723
+
+--- Slice: race='Other' (Count: 55) ---
+Precision: 1.0000 | Recall: 0.6667 | F1: 0.8000
+
+--- Slice: race='White' (Count: 5,595) ---
+Precision: 0.7372 | Recall: 0.6366 | F1: 0.6832
+
+--- Slice: sex='Female' (Count: 2,126) ---
+Precision: 0.7256 | Recall: 0.5107 | F1: 0.5995
+
+--- Slice: sex='Male' (Count: 4,387) ---
+Precision: 0.7410 | Recall: 0.6607 | F1: 0.6985
+
+--- Slice: native-country='?' (Count: 125) ---
+Precision: 0.7333 | Recall: 0.7097 | F1: 0.7213
+
+--- Slice: native-country='Cambodia' (Count: 3) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Canada' (Count: 22) ---
+Precision: 0.7000 | Recall: 0.8750 | F1: 0.7778
+
+--- Slice: native-country='China' (Count: 18) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Columbia' (Count: 6) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Cuba' (Count: 19) ---
+Precision: 0.6667 | Recall: 0.8000 | F1: 0.7273
+
+--- Slice: native-country='Dominican-Republic' (Count: 8) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Ecuador' (Count: 5) ---
+Precision: 1.0000 | Recall: 0.5000 | F1: 0.6667
+
+--- Slice: native-country='El-Salvador' (Count: 20) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='England' (Count: 14) ---
+Precision: 0.6667 | Recall: 0.5000 | F1: 0.5714
+
+--- Slice: native-country='France' (Count: 5) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Germany' (Count: 32) ---
+Precision: 0.8182 | Recall: 0.6923 | F1: 0.7500
+
+--- Slice: native-country='Greece' (Count: 7) ---
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+
+--- Slice: native-country='Guatemala' (Count: 13) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Haiti' (Count: 6) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Honduras' (Count: 4) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Hong' (Count: 8) ---
+Precision: 0.5000 | Recall: 1.0000 | F1: 0.6667
+
+--- Slice: native-country='Hungary' (Count: 3) ---
+Precision: 1.0000 | Recall: 0.5000 | F1: 0.6667
+
+--- Slice: native-country='India' (Count: 21) ---
+Precision: 0.8750 | Recall: 0.8750 | F1: 0.8750
+
+--- Slice: native-country='Iran' (Count: 12) ---
+Precision: 0.3333 | Recall: 0.2000 | F1: 0.2500
+
+--- Slice: native-country='Ireland' (Count: 5) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Italy' (Count: 14) ---
+Precision: 0.7500 | Recall: 0.7500 | F1: 0.7500
+
+--- Slice: native-country='Jamaica' (Count: 13) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Japan' (Count: 11) ---
+Precision: 0.7500 | Recall: 0.7500 | F1: 0.7500
+
+--- Slice: native-country='Laos' (Count: 4) ---
+Precision: 1.0000 | Recall: 0.0000 | F1: 0.0000
+
+--- Slice: native-country='Mexico' (Count: 114) ---
+Precision: 1.0000 | Recall: 0.3333 | F1: 0.5000
+
+--- Slice: native-country='Nicaragua' (Count: 7) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Peru' (Count: 5) ---
+Precision: 0.0000 | Recall: 0.0000 | F1: 0.0000
+
+--- Slice: native-country='Philippines' (Count: 35) ---
+Precision: 1.0000 | Recall: 0.6875 | F1: 0.8148
+
+--- Slice: native-country='Poland' (Count: 14) ---
+Precision: 0.6667 | Recall: 1.0000 | F1: 0.8000
+
+--- Slice: native-country='Portugal' (Count: 6) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Puerto-Rico' (Count: 22) ---
+Precision: 0.8333 | Recall: 0.8333 | F1: 0.8333
+
+--- Slice: native-country='Scotland' (Count: 3) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='South' (Count: 13) ---
+Precision: 0.3333 | Recall: 0.5000 | F1: 0.4000
+
+--- Slice: native-country='Taiwan' (Count: 11) ---
+Precision: 0.7500 | Recall: 0.7500 | F1: 0.7500
+
+--- Slice: native-country='Thailand' (Count: 5) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Trinadad&Tobago' (Count: 3) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='United-States' (Count: 5,870) ---
+Precision: 0.7362 | Recall: 0.6321 | F1: 0.6802
+
+--- Slice: native-country='Vietnam' (Count: 5) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+
+--- Slice: native-country='Yugoslavia' (Count: 2) ---
+Precision: 1.0000 | Recall: 1.0000 | F1: 1.0000
+

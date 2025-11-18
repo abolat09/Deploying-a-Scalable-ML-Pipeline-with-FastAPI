@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import OneHotEncoder, LabelBinarizer
+from sklearn.preprocessing import LabelBinarizer
 from ml.data import process_data
 from ml.model import train_model, inference
 
@@ -13,14 +13,16 @@ def sample_data():
         'age': [30, 40, 50, 60],
         'workclass': ['Private', 'Self-emp-not-inc', 'Private', 'Federal-gov'],
         'education': ['Bachelors', 'HS-grad', 'Masters', 'Doctorate'],
-        'marital-status': ['Married-civ-spouse', 'Divorced', 'Never-married', 'Married-civ-spouse'],
-        'occupation': ['Exec-managerial', 'Craft-repair', 'Prof-specialty', 'Prof-specialty'],
+        'marital-status': ['Married-civ-spouse', 'Divorced', 'Never-married', 
+                           'Married-civ-spouse'],
+        'occupation': ['Exec-managerial', 'Craft-repair', 'Prof-specialty', 
+                       'Prof-specialty'],
         'relationship': ['Husband', 'Not-in-family', 'Not-in-family', 'Wife'],
         'race': ['White', 'Black', 'Asian-Pac-Islander', 'White'],
         'sex': ['Male', 'Male', 'Female', 'Female'],
         'hours-per-week': [40, 45, 20, 50],
         'native-country': ['United-States', 'United-States', 'India', 'Germany'],
-        'salary': ['>50K', '<=50K', '>50K', '>50K'] 
+        'salary': ['>50K', '<=50K', '>50K', '>50K']
     })
     return data
 
@@ -34,18 +36,18 @@ def test_data_integrity(sample_data):
         "workclass", "education", "marital-status", "occupation", "relationship",
         "race", "sex", "native-country",
     ]
-    
+
     X, y, encoder, lb = process_data(
-        sample_data, 
-        categorical_features=categorical_features, 
-        label="salary", 
+        sample_data,
+        categorical_features=categorical_features,
+        label="salary",
         training=True
     )
-    
+
     # Check the type of returned objects
     assert isinstance(X, np.ndarray)
     assert isinstance(lb, LabelBinarizer)
-    
+
     # Check that the number of rows is preserved (4 original rows)
     assert X.shape[0] == 4
 
@@ -59,14 +61,14 @@ def test_label_binarization(sample_data):
         "workclass", "education", "marital-status", "occupation", "relationship",
         "race", "sex", "native-country",
     ]
-    
+
     X, y, encoder, lb = process_data(
-        sample_data, 
-        categorical_features=categorical_features, 
-        label="salary", 
+        sample_data,
+        categorical_features=categorical_features,
+        label="salary",
         training=True
     )
-    
+
     # Check that the label array is binary (contains only 0s and 1s)
     assert np.array_equal(y, np.array([1, 0, 1, 1]))
     assert y.ndim == 1
@@ -81,21 +83,21 @@ def test_model_inference_output(sample_data):
         "workclass", "education", "marital-status", "occupation", "relationship",
         "race", "sex", "native-country",
     ]
-    
+
     # Prepare the data
     X, y, encoder, lb = process_data(
-        sample_data, 
-        categorical_features=categorical_features, 
-        label="salary", 
+        sample_data,
+        categorical_features=categorical_features,
+        label="salary",
         training=True
     )
-    
+
     # Train the model
     model = train_model(X, y)
-    
+
     # Run inference
     preds = inference(model, X)
-    
+
     # Check that predictions array is the correct shape and contains binary values
     assert preds.shape[0] == 4
     assert np.issubdtype(preds.dtype, np.integer)

@@ -12,8 +12,8 @@ def process_data(
     label binarizer for the labels. This can be used in either training or
     inference/validation.
 
-    Note: depending on the type of model used, you may want to add in functionality that
-    scales the continuous data.
+    Note: depending on the type of model used, you may want to add in 
+    functionality that scales the continuous data.
 
     Inputs
     ------
@@ -22,8 +22,8 @@ def process_data(
     categorical_features: list[str]
         List containing the names of the categorical features (default=[])
     label : str
-        Name of the label column in `X`. If None, then an empty array will be returned
-        for y (default=None)
+        Name of the label column in `X`. If None, then an empty array will be 
+        returned for y (default=None)
     training : bool
         Indicator if training mode or inference/validation mode.
     encoder : sklearn.preprocessing._encoders.OneHotEncoder
@@ -38,11 +38,11 @@ def process_data(
     y : np.array
         Processed labels if labeled=True, otherwise empty np.array.
     encoder : sklearn.preprocessing._encoders.OneHotEncoder
-        Trained OneHotEncoder if training is True, otherwise returns the encoder passed
-        in.
+        Trained OneHotEncoder if training is True, otherwise returns the 
+        encoder passed in.
     lb : sklearn.preprocessing._label.LabelBinarizer
-        Trained LabelBinarizer if training is True, otherwise returns the binarizer
-        passed in.
+        Trained LabelBinarizer if training is True, otherwise returns the 
+        binarizer passed in.
     """
 
     if label is not None:
@@ -53,11 +53,7 @@ def process_data(
 
     X_categorical = X[categorical_features].values
     
-    # 🐞 FIX 1: Change X.drop to X.drop(columns=...) to ensure correct column selection
-    # The original line X.drop(categorical_features, axis=1) is technically fine, 
-    # but using 'columns=' is safer and more explicit when dropping by column names.
-    # The udacity starter code intended to use the 'columns' argument here, 
-    # as the continuous features are those *not* in the categorical list.
+    # Removed unnecessary comments which caused E501 errors
     X_continuous = X.drop(columns=categorical_features, axis=1)
 
     if training is True:
@@ -73,8 +69,7 @@ def process_data(
         except AttributeError:
             pass
 
-    # 🐞 FIX 2: Add .values to X_continuous. This converts the pandas DataFrame 
-    # of continuous features into a numpy array, which is required for np.concatenate.
+    # Removed unnecessary comments which caused E501 errors
     X = np.concatenate([X_continuous.values, X_categorical], axis=1)
     return X, y, encoder, lb
 

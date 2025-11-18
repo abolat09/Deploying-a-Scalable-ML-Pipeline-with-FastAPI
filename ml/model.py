@@ -2,11 +2,8 @@ import joblib
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 from sklearn.ensemble import RandomForestClassifier 
-import numpy as np
-import pandas as pd
 
 
-# Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -89,7 +86,8 @@ def load_model(path):
 def performance_on_categorical_slice(
     data, column_name, slice_value, categorical_features, label, encoder, lb, model
 ):
-    """ Computes the model metrics on a slice of the data specified by a column name and
+    """ Computes the model metrics on a slice of the data specified by a 
+    column name and value.
 
     Processes the data using one hot encoding for the categorical features and a
     label binarizer for the labels. This can be used in either training or
@@ -98,7 +96,8 @@ def performance_on_categorical_slice(
     Inputs
     ------
     data : pd.DataFrame
-        Dataframe containing the features and label. Columns in `categorical_features`
+        Dataframe containing the features and label. Columns in 
+        `categorical_features`
     column_name : str
         Column containing the sliced feature.
     slice_value : str, int, float
@@ -106,8 +105,8 @@ def performance_on_categorical_slice(
     categorical_features: list
         List containing the names of the categorical features (default=[])
     label : str
-        Name of the label column in `X`. If None, then an empty array will be returned
-        for y (default=None)
+        Name of the label column in `X`. If None, then an empty array will be 
+        returned for y (default=None)
     encoder : sklearn.preprocessing._encoders.OneHotEncoder
         Trained sklearn OneHotEncoder, only used if training=False.
     lb : sklearn.preprocessing._label.LabelBinarizer
