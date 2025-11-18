@@ -36,7 +36,8 @@ def test_data_integrity(sample_data):
     row count.
     """
     categorical_features = [
-        "workclass", "education", "marital-status", "occupation", "relationship",
+        "workclass", "education", "marital-status", 
+        "occupation", "relationship",
         "race", "sex", "native-country",
     ]
 
@@ -61,8 +62,8 @@ def test_label_binarization(sample_data):
     Test 2: Ensures process_data correctly binarizes the 'salary' label
     (contains only 0s and 1s).
     """
-    categorical_features = [
-        "workclass", "education", "marital-status", "occupation", "relationship",
+    categorical_features = ["workclass", "education", 
+    "marital-status", "occupation", "relationship",
         "race", "sex", "native-country",
     ]
 
@@ -84,8 +85,8 @@ def test_model_inference_output(sample_data):
     Test 3: Ensures model inference runs without errors and returns
     binary predictions.
     """
-    categorical_features = [
-        "workclass", "education", "marital-status", "occupation", "relationship",
+    categorical_features = ["workclass", "education", 
+    "marital-status", "occupation", "relationship",
         "race", "sex", "native-country",
     ]
 
@@ -108,3 +109,4 @@ def test_model_inference_output(sample_data):
     assert preds.shape[0] == 4
     assert np.issubdtype(preds.dtype, np.integer)
     assert np.all(np.logical_or(preds == 0, preds == 1))
+    

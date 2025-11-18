@@ -4,10 +4,7 @@ from fastapi import FastAPI, Field
 from pydantic import BaseModel
 from ml.data import apply_label, process_data
 from ml.model import inference, load_model
-
-
 # E302/E305 FIX: Ensure 2 blank lines between global statements and functions/classes
-
 MODEL_DIR = "model"
 MODEL_PATH = os.path.join(MODEL_DIR, "model.pkl")
 ENCODER_PATH = os.path.join(MODEL_DIR, "encoder.pkl")
@@ -77,7 +74,6 @@ async def post_inference(data: Data):
     """
     # DO NOT MODIFY: turn the Pydantic model into a dict.
     data_dict = data.model_dump(by_alias=True)
-
     # DO NOT MODIFY: clean up the dict to turn it into a Pandas DataFrame.
     # E501 FIX: Split long comment line
     # The data has names with hyphens and Python does not allow those as
@@ -101,3 +97,4 @@ async def post_inference(data: Data):
 
     # Return the decoded label
     return {"prediction": apply_label(prediction)}
+    
