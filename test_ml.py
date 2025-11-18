@@ -6,7 +6,8 @@ from ml.data import process_data
 from ml.model import train_model, inference
 
 
-# Fixture to provide a small, representative sample DataFrame for testing
+# Fixture to provide a small, representative sample
+# DataFrame for testing
 @pytest.fixture
 def sample_data():
     data = pd.DataFrame({
@@ -21,7 +22,8 @@ def sample_data():
         'race': ['White', 'Black', 'Asian-Pac-Islander', 'White'],
         'sex': ['Male', 'Male', 'Female', 'Female'],
         'hours-per-week': [40, 45, 20, 50],
-        'native-country': ['United-States', 'United-States', 'India', 'Germany'],
+        'native-country': ['United-States', 'United-States', 'India',
+                           'Germany'],
         'salary': ['>50K', '<=50K', '>50K', '>50K']
     })
     return data
@@ -30,7 +32,8 @@ def sample_data():
 # TODO: implement the first test. Change the function name and input as needed
 def test_data_integrity(sample_data):
     """
-    Test 1: Ensures process_data returns correct object types and preserves row count.
+    Test 1: Ensures process_data returns correct object types and
+    preserves row count.
     """
     categorical_features = [
         "workclass", "education", "marital-status", "occupation", "relationship",
@@ -55,8 +58,8 @@ def test_data_integrity(sample_data):
 # TODO: implement the second test. Change the function name and input as needed
 def test_label_binarization(sample_data):
     """
-    Test 2: Ensures process_data correctly binarizes the 'salary' label (contains
-    only 0s and 1s).
+    Test 2: Ensures process_data correctly binarizes the 'salary' label
+    (contains only 0s and 1s).
     """
     categorical_features = [
         "workclass", "education", "marital-status", "occupation", "relationship",
@@ -78,8 +81,8 @@ def test_label_binarization(sample_data):
 # TODO: implement the third test. Change the function name and input as needed
 def test_model_inference_output(sample_data):
     """
-    Test 3: Ensures model inference runs without errors and returns binary
-    predictions.
+    Test 3: Ensures model inference runs without errors and returns
+    binary predictions.
     """
     categorical_features = [
         "workclass", "education", "marital-status", "occupation", "relationship",
@@ -100,7 +103,8 @@ def test_model_inference_output(sample_data):
     # Run inference
     preds = inference(model, X)
 
-    # Check that predictions array is the correct shape and contains binary values
+    # Check that predictions array is the correct shape and contains
+    # binary values
     assert preds.shape[0] == 4
     assert np.issubdtype(preds.dtype, np.integer)
     assert np.all(np.logical_or(preds == 0, preds == 1))

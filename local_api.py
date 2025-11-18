@@ -1,5 +1,4 @@
 import requests
-import json  # Included for potential data handling, although not strictly needed for requests.post
 
 # Base URL for the local FastAPI server
 HOST = "http://127.0.0.1:8000"
@@ -46,5 +45,8 @@ if __name__ == "__main__":
         test_api()
     except requests.exceptions.ConnectionError:
         print("\n\nERROR: Could not connect to the API server.")
-        print("Please ensure the FastAPI server is running on port 8000 in a separate terminal.")
-        print('Run: uvicorn main:app --host 0.0.0.0 --port 8000')
+        print(
+            "Please ensure the FastAPI server is running on port 8000 "
+            "in a separate terminal."
+        )
+        print("Run: uvicorn main:app --host 0.0.0.0 --port 8000")

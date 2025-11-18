@@ -69,7 +69,8 @@ preds = inference(model, X_test)
 p, r, fb = compute_model_metrics(y_test, preds)
 print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}")
 
-# TODO: compute the performance on model slices using the performance_on_categorical_slice function
+# TODO: compute the performance on model slices using the
+# performance_on_categorical_slice function
 # Clear the file first before appending new output
 if os.path.exists("slice_output.txt"):
     os.remove("slice_output.txt")
@@ -92,10 +93,15 @@ for col in cat_features:
         )
 
         with open("slice_output.txt", "a") as f:
-            # FIX E501: Breaking line 95's output string
-            f.write(f"--- Slice: {col}='{slicevalue}' (Count: {count:,}) ---\n")
-            # FIX E501 (long line) and W292 (no newline at end)
-            f.write(f"Precision: {p_slice:.4f} | Recall: {r_slice:.4f} | "
-                    f"F1: {fb_slice:.4f}\n\n")
-            print(f"Slice: {col}='{slicevalue}' | Precision: {p_slice:.4f} | "
-                  f"Recall: {r_slice:.4f} | F1: {fb_slice:.4f}")
+            f.write(
+                f"--- Slice: {col}='{slicevalue}' "
+                f"(Count: {count:,}) ---\n"
+            )
+            f.write(
+                f"Precision: {p_slice:.4f} | Recall: {r_slice:.4f} | "
+                f"F1: {fb_slice:.4f}\n\n"
+            )
+            print(
+                f"Slice: {col}='{slicevalue}' | Precision: {p_slice:.4f} | "
+                f"Recall: {r_slice:.4f} | F1: {fb_slice:.4f}"
+            )
