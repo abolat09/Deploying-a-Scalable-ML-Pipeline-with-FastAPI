@@ -21,9 +21,10 @@ try:
     encoder = load_model(ENCODER_PATH)
     lb = load_model(LB_PATH)
 except FileNotFoundError as e:
-    # E501 FIX: Breaking the line to be under 80 characters
-    print(f"ERROR: Model artifact not found at {e.filename}. "
-          "Run train_model.py first.")
+    print(
+        f"ERROR: Model artifact not found at {e.filename}. "
+        "Run train_model.py first."
+    )
     # Exit or handle gracefully if artifacts are missing
 
 # Define categorical features (needed for data processing)
@@ -58,9 +59,9 @@ class Data(BaseModel):
     capital_loss: int = Field(..., example=0, alias="capital-loss")
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(
-        ..., example="United-States", 
+        ..., example="United-States",
         # E501 FIX: Breaking the line to be under 80 characters
-        alias="native-country" 
+        alias="native-country"
     )
 
 
@@ -77,13 +78,15 @@ def welcome_message():
 def run_inference(data: Data):
     """
     POST endpoint for model inference.
-    Takes census features and returns the predicted income category (>50K or <=50K).
+    Takes census features and returns the predicted income
+    category (>50K or <=50K).
     """
     # DO NOT MODIFY: turn the Pydantic model into a dict.
     data_dict = data.model_dump(by_alias=True)
 
     # DO NOT MODIFY: clean up the dict to turn it into a Pandas DataFrame.
-    # The data has names with hyphens and Python does not allow those as variable names.
+    # The data has names with hyphens and Python does not allow those
+    # as variable names.
     # Here it uses the functionality of FastAPI/Pydantic/etc to deal with this.
     data_single_row = {k: [v] for k, v in data_dict.items()}
     input_df = pd.DataFrame.from_dict(data_single_row)
