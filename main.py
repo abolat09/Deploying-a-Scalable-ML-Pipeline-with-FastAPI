@@ -21,7 +21,7 @@ try:
     encoder = load_model(ENCODER_PATH)
     lb = load_model(LB_PATH)
 except FileNotFoundError as e:
-    # E501 FIX: Breaking the long line
+    # E501 FIX: Breaking the line to be under 80 characters
     print(f"ERROR: Model artifact not found at {e.filename}. "
           "Run train_model.py first.")
     # Exit or handle gracefully if artifacts are missing
@@ -45,6 +45,7 @@ class Data(BaseModel):
     workclass: str = Field(..., example="Private")
     fnlgt: int = Field(..., example=178356)
     education: str = Field(..., example="HS-grad")
+    # Note: alias is used to handle hyphens in the column names
     education_num: int = Field(..., example=10, alias="education-num")
     marital_status: str = Field(
         ..., example="Married-civ-spouse", alias="marital-status"
@@ -57,7 +58,9 @@ class Data(BaseModel):
     capital_loss: int = Field(..., example=0, alias="capital-loss")
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(
-        ..., example="United-States", alias="native-country"
+        ..., example="United-States", 
+        # E501 FIX: Breaking the line to be under 80 characters
+        alias="native-country" 
     )
 
 
@@ -80,6 +83,8 @@ def run_inference(data: Data):
     data_dict = data.model_dump(by_alias=True)
 
     # DO NOT MODIFY: clean up the dict to turn it into a Pandas DataFrame.
+    # The data has names with hyphens and Python does not allow those as variable names.
+    # Here it uses the functionality of FastAPI/Pydantic/etc to deal with this.
     data_single_row = {k: [v] for k, v in data_dict.items()}
     input_df = pd.DataFrame.from_dict(data_single_row)
 
@@ -98,5 +103,3 @@ def run_inference(data: Data):
 
     # Return the decoded label
     return {"prediction": apply_label(prediction)}
-
-# W292 FIX: Ensure final blank line is present
