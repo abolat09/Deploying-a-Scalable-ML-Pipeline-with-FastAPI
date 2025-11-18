@@ -1,5 +1,4 @@
 import os
-import sys
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -94,5 +93,9 @@ for col in cat_features:
 
         with open("slice_output.txt", "a") as f:
             f.write(f"--- Slice: {col}='{slicevalue}' (Count: {count:,}) ---\n")
-            f.write(f"Precision: {p_slice:.4f} | Recall: {r_slice:.4f} | F1: {fb_slice:.4f}\n\n")
-            print(f"Slice: {col}='{slicevalue}' | Precision: {p_slice:.4f} | Recall: {r_slice:.4f} | F1: {fb_slice:.4f}")
+            # WRAPPED: Line to prevent E501 error
+            f.write(f"Precision: {p_slice:.4f} | Recall: {r_slice:.4f} | "
+                    f"F1: {fb_slice:.4f}\n\n")
+            # WRAPPED: Line to prevent E501 error
+            print(f"Slice: {col}='{slicevalue}' | Precision: {p_slice:.4f} | "
+                  f"Recall: {r_slice:.4f} | F1: {fb_slice:.4f}")

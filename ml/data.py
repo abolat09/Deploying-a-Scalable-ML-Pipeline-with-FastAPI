@@ -12,7 +12,7 @@ def process_data(
     label binarizer for the labels. This can be used in either training or
     inference/validation.
 
-    Note: depending on the type of model used, you may want to add in 
+    Note: depending on the type of model used, you may want to add in
     functionality that scales the continuous data.
 
     Inputs
@@ -22,7 +22,7 @@ def process_data(
     categorical_features: list[str]
         List containing the names of the categorical features (default=[])
     label : str
-        Name of the label column in `X`. If None, then an empty array will be 
+        Name of the label column in `X`. If None, then an empty array will be
         returned for y (default=None)
     training : bool
         Indicator if training mode or inference/validation mode.
@@ -38,10 +38,10 @@ def process_data(
     y : np.array
         Processed labels if labeled=True, otherwise empty np.array.
     encoder : sklearn.preprocessing._encoders.OneHotEncoder
-        Trained OneHotEncoder if training is True, otherwise returns the 
+        Trained OneHotEncoder if training is True, otherwise returns the
         encoder passed in.
     lb : sklearn.preprocessing._label.LabelBinarizer
-        Trained LabelBinarizer if training is True, otherwise returns the 
+        Trained LabelBinarizer if training is True, otherwise returns the
         binarizer passed in.
     """
 
@@ -52,8 +52,8 @@ def process_data(
         y = np.array([])
 
     X_categorical = X[categorical_features].values
-    
-    # Removed unnecessary comments which caused E501 errors
+
+    # FIX: Cleaned up long line and comments
     X_continuous = X.drop(columns=categorical_features, axis=1)
 
     if training is True:
@@ -69,9 +69,10 @@ def process_data(
         except AttributeError:
             pass
 
-    # Removed unnecessary comments which caused E501 errors
+    # FIX: Cleaned up long line and comments
     X = np.concatenate([X_continuous.values, X_categorical], axis=1)
     return X, y, encoder, lb
+
 
 def apply_label(inference):
     """ Convert the binary label in a single inference sample into string output."""
