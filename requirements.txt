@@ -1,4 +1,10 @@
-typer==0.20.0
-typer-slim==0.20.0
-uvicorn==0.30.5
-zstandard==0.25.0
+pandas
+numpy
+scikit-learn
+joblib
+fastapi
+uvicorn
+pydantic
+requests
+pytest
+flake8
